@@ -6,7 +6,11 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "build:href": "ng build --base-href ./",
+    "copy:dist": "copyfiles dist/gifs-app/* ./docs -f",
+    "delete:docs": "del docs",
+    "build:github": "npm run delete:docs && npm run build:href && npm run copy:dist"
   },
   "private": true,
   "dependencies": {
